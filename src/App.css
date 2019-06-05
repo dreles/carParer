@@ -14,7 +14,11 @@ h1 {
 }
 
 .left { 
-  margin-left: 5%;
+  margin-left: 10%;
+}
+
+.right {
+  padding-left: 12%;
 }
 
 .card-title { 

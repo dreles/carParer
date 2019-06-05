@@ -3,15 +3,30 @@ import './App.css';
 import Card from './Card'
 
 function App() {
+  
+  const cars = [
+    {
+      name: "458 - Italia",
+      price: "200K",
+      type: "Ferrari"
+
+    },
+    {
+      name: "Aventador",
+      price: "500K",
+      type: "Lamborghini"
+    }
+  ]
+
   return (
     <div>
       <h1>CarPare</h1>
       <div className="row">
-        <div className="col-6">
-          <Card style={{paddingLeft: "10%"}}/>
+        <div cars={ cars } className="col-6 right">
+          <Card number={1}/>
         </div>
-        <div className="col-6">
-          <Card/>
+        <div cars={ cars } className="right col-6">
+          <Card number={2}/>
         </div>
       </div>
     </div>
@@ -19,3 +34,4 @@ function App() {
 }
 
 export default App;
+
