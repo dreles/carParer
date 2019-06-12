@@ -29,3 +29,21 @@ h1 {
   width: 100%;
 }
 
+.card-specs {
+  text-align: center;
+  list-style: none;
+  padding-left: 0px;
+}
+
+.card-img-top{
+  height: 243.89px;
+}
+
+.winner{
+  color: green;
+  font-weight: bold;
+}
+
+.loser{
+  color: red;
+}

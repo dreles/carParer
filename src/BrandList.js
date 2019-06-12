@@ -17,31 +17,27 @@ class BrandList extends React.Component {
 				</li>
 			)
 		})
+	}
 
+	filterCars = (make) => {
+		let cars = this.props.cars.filter((car) => {
+			return car.make === make 
+		})
+		return cars
 	}
 
 	render(){
-		const ferraris= [{
-			type: "Ferrari",
-			name: "458 Italia"
 		
-		},
-		{
-			type: "Ferrari",
-			name: "488 GTB"
-		},
-		{
-			type: "Ferrari",
-			name: "812 Superfast"
-		}]
+		let cars = this.filterCars(this.props.make)
+	
 		return(
 				<li className="list-group-item">
-				 	<button className="btn btn-link collapsed" type="button" data-toggle="collapse" data-target={`#collapseTwo${this.props.idnumber}`} aria-expanded="false" aria-controls="collapseTwo">
-	         			 Ferrari
+				 	<button className="btn btn-link collapsed" type="button" data-toggle="collapse" data-target={`#collapseTwo${this.props.make}${this.props.idnumber}`} aria-expanded="false" aria-controls="collapseTwo">
+	         			 {this.props.make}
 	        		</button>
-	        		<div id={`collapseTwo${this.props.idnumber}`} className="collapse">
+	        		<div id={`collapseTwo${this.props.make}${this.props.idnumber}`} className="collapse">
 						<ul className="list-group list-group-flush">
-							{this.renderList(ferraris)}
+							{this.renderList(cars)}
 						</ul>
 					</div>
         		</li>			

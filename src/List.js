@@ -2,22 +2,24 @@ import React from 'react';
 import BrandList from './BrandList'
 
 class List extends React.Component { 	
+
+	renderListElements = () => {
+		const arr = Array.from(this.props.makes)
+		return arr.map((make) => {
+			return(
+				<BrandList cars={this.props.cars} key={make} make={make} idnumber={this.props.idnumber}></BrandList>
+			)
+		})
+	}
+
+	
 	
 	render() { 
 		
-		
 		return (
 			<ul className="list-group">
-			
-        		<BrandList idnumber={this.props.idnumber}></BrandList>
-
-			 <li className="list-group-item">Lamborghini</li>
-			 <li className="list-group-item">Porsche</li>
-			 <li className="list-group-item active">Maclaren</li>
-				
+			 	{this.renderListElements()}
 			</ul>
-
-			
 		)
 	}
 }
